@@ -1,0 +1,1 @@
+var isInertiaEnabled  = false;

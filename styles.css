@@ -1,0 +1,394 @@
+
+/*******************************************************************************************\
+* Copyright 2002-2014 (C) Digital Multi-Media Design (DMMD), LLC (http://www.dmmd.net)      *
+* This file is part of DMMD's Software Library.                                             *
+* The software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; *
+* without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. *
+* DMMD can customize or expand this code for your own application.                          *
+* Please contact us at contact@dmmd.net or via phone, at 7 0 3 - 4 3 9 - 0 0 6 7 (USA)      *
+* or visit us at our website (http://dmmd.net).                                             *
+\*******************************************************************************************/
+
+html, body
+{
+    margin: 0;
+    padding: 0;
+}
+
+::backdrop
+{
+    background-color: white;
+}
+
+body
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+img
+{
+    position: relative;
+    display: block;
+
+    top: 50%;
+
+    width: auto;
+    height: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);  
+}
+
+#topContainer
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#imageContainer
+{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: 1;
+    
+    overflow: hidden;
+}
+
+.image
+{
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.imageInvisible
+{
+    position: absolute;
+    visibility: hidden;
+}
+
+.imageOpaque
+{
+    position: absolute;
+    opacity: 0.5;
+    
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.imageVisible
+{
+    position: absolute;
+    opacity: 0.8;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+#hotspotcanvas
+{
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    /*-ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);*/
+
+    z-index: 8;
+    /*cursor: ew-resize;*/
+
+    /*width: 100%;*/
+    height: 100%;
+}
+
+#zoomContainer
+{
+    position: relative;
+    z-index: 9;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    display: none;
+}
+
+#draggableContainer
+{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: move;
+}
+
+.controllerContainerBottomLeft
+{
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+
+    padding: 8px;
+}
+
+.controllerContainerBottomRight
+{
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+
+    padding: 8px;
+}
+
+.controllerContainerTopLeft
+{
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    padding: 8px;
+}
+
+.controllerContainerTopRight
+{
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    z-index: 10;
+
+    padding: 8px;
+}
+
+#logoContainer
+{
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    z-index: 11;
+}
+
+#logoContainer img
+{
+    position: absolute;
+
+    top: 0px;
+    left: 0px;
+
+    width: auto;
+    height: auto;
+
+    -ms-transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+}
+
+#deepzoom
+{
+    display: inline-block;
+    color: #1390ff;
+}
+
+#topContainer:-webkit-full-screen
+{
+    position: fixed;
+    height: 100%;
+    top: 0;
+    background: none;
+    background-color: #ffffff;
+}
+
+#topContainer:-moz-full-screen
+{
+    position: fixed;
+    height: 100%;
+    top: 0;
+    background: none;
+    background-color: #ffffff;
+}
+
+#topContainer:-ms-fullscreen
+{
+    width: auto;
+    height: auto;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+#topContainer:fullscreen
+{
+    position: fixed;
+    height: 100%;
+    top: 0;
+    background: none;
+    background-color: #ffffff;
+}
+
+#progressLoader
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+
+    z-index: 10;
+
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+
+    -webkit-box-shadow: inset 0px 0px 8px #000000;
+    -moz-box-shadow: inset 0px 0px 8px #000000;
+    -o-box-shadow: inset 0px 0px 8px #000000;
+    -ms-box-shadow: inset 0px 0px 8px #000000;
+    box-shadow: inset 0px 0px 8px #000000;
+}
+
+#loaderContainer
+{
+    position: absolute;
+    display: inline-block;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+
+    background: #feffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #feffff 0%, #ddf1f9 35%, #a0d8ef 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 ); /* IE6-9 */
+
+    -webkit-box-shadow: 0px 0px 8px #000000;
+    -moz-box-shadow: 0px 0px 8px #000000;
+    -o-box-shadow: 0px 0px 8px #000000;
+    -ms-box-shadow: 0px 0px 8px #000000;
+    box-shadow: 0px 0px 8px #000000;
+}
+
+#progressLabel
+{
+    margin: 8px 0px 0px 0px;
+}
+
+#progressElement
+{
+    margin: 0px 8px 8px 8px;
+}
+
+#inverted-contain
+{
+    display: none;
+}
+
+#inverted-contain .panzoom
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.zoomimg
+{
+    position: absolute;
+
+    width: auto;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+
+    top: 0px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#videoElement
+{
+    height: 100%;
+}
+
+#zoomdivclose
+{
+        position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#zoomdivclose-container
+{
+        position: absolute;
+    bottom: 0px;
+
+    width: 100%;
+
+    margin: 0px;
+    padding: 0px;
+
+        background-color: #ffffff;
+    opacity: 0.5;
+}
+
+#zoomdivclose-desc
+{
+        margin: 0px;
+    padding: 0px;
+
+        color: #000000;
+
+        font-weight: bold;
+}

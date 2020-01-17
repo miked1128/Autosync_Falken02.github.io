@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta http-equiv="Cache-control" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="description" content="" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="theme.css">
+<script src="jquery-2.1.1.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="jquery.panzoom.min.js"></script>
+<script src="jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="largesize.js"></script>
+<script type="text/javascript" src="images.js"></script>
+<script type="text/javascript" src="playtype.js"></script>
+<script type="text/javascript" src="speed.js"></script>
+<script type="text/javascript" src="pointerdrag.js"></script>
+<script type="text/javascript" src="rotationdirection.js"></script>
+<script type="text/javascript">
+    var rowsCols = "undefined";
+</script>
+<script type="text/javascript" src="hotspots.js"></script>
+<script type="text/javascript" src="bounce.js"></script>
+<script type="text/javascript" src="dragspeed.js"></script>
+<script type="text/javascript" src="mousezoom.js"></script>
+<script type="text/javascript" src="maxzoom.js"></script>
+<script type="text/javascript" src="deepzoom.js"></script>
+<script type="text/javascript" src="rows.js"></script>
+<script type="text/javascript" src="firstrow.js"></script>
+<script type="text/javascript" src="cursor.js"></script>
+<script type="text/javascript" src="rotationaftercontrol.js"></script>
+<script type="text/javascript" src="inertia.js"></script>
+<script type="text/javascript" src="firstimage.js"></script>
+<script type="text/javascript" src="rotation.js"></script>
+</head>
+<body oncontextmenu="return false;">
+<div id="topContainer">
+<div id="imageContainer">
+</div>
+<div id="imageContainerLarge">
+</div>
+<canvas id="hotspotcanvas"></canvas>
+<section id="inverted-contain">
+<div class="parent">
+<div class="panzoom">
+<img id="zoomimg" class="zoomimg" />
+</div>
+</div>
+</section>
+<div id="controllerContainerTopLeft" class="controllerContainerTopLeft"></div>
+<div id="controllerContainerTopRight" class="controllerContainerTopRight"></div>
+<div id="controllerContainerBottomLeft" class="controllerContainerBottomLeft"></div>
+<div id="controllerContainerBottomRight" class="controllerContainerBottomRight"></div>
+<div id="controllerControls">
+<div id="play" class="play"></div>
+<div id="prev"></div>
+<div id="next"></div>
+<div id="zoomin" class="zoomin"></div>
+<div id="fullscreen"></div>
+</div>
+<div id="progressLoader">
+    <div id="loaderContainer">
+        <p id="progressLabel">Loading...</p>
+        <progress id="progressElement" value="0" max="72"></progress>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="buttons.js"></script>
+<script type="text/javascript">
+function isIosDevice()
+{
+    var iOSDevice;
+    var userAgent = navigator.userAgent;
+    var pattern = new RegExp('iphone|ipad|ipod');
+    if (pattern.test(userAgent.toLowerCase()))
+    {
+        iOSDevice = true;
+    }
+    else
+    {
+        iOSDevice = false;
+    }
+    return iOSDevice;
+}
+function isMsEdge()
+{
+    var msEdge;
+    var userAgent = navigator.userAgent;
+    var pattern = new RegExp('edge');
+    if (pattern.test(userAgent.toLowerCase()))
+    {
+        msEdge = true;
+    }
+    else
+    {
+        msEdge = false;
+    }
+    return msEdge;
+}
+if (isIosDevice() || isMsEdge())
+{
+    document.getElementById("fullscreen").style.visibility = "hidden";
+}
+</script>
+</body>
+</html>

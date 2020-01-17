@@ -1,0 +1,78 @@
+
+/*******************************************************************************************\
+* Copyright 2002-2014 (C) Digital Multi-Media Design (DMMD), LLC (http://www.dmmd.net)      *
+* This file is part of DMMD's Software Library.                                             *
+* The software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; *
+* without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. *
+* DMMD can customize or expand this code for your own application.                          *
+* Please contact us at contact@dmmd.net or via phone, at 7 0 3 - 4 3 9 - 0 0 6 7 (USA)      *
+* or visit us at our website (http://dmmd.net).                                             *
+\*******************************************************************************************/
+
+.play
+{
+    background-image: url("toolbar/play-button.png");
+}
+
+.pause
+{
+    background-image: url("toolbar/pause-button.png");
+}
+
+#prev
+{
+    background-image: url("toolbar/left-arrow.png");
+}
+
+#next
+{
+    background-image: url("toolbar/right-arrow.png");
+}
+
+.zoomin
+{
+    background-image: url("toolbar/zoom-in.png");
+}
+
+.zoomout
+{
+    background-image: url("toolbar/zoom-out.png");
+}
+
+#fullscreen
+{
+    background-image: url("toolbar/fullscreen.png");
+}
+
+#play, #prev, #next, #zoomin, #fullscreen
+{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+
+    -webkit-transition: all 150ms ease-out;
+    -moz-transition: all 150ms ease-out;
+    -o-transition: all 150ms ease-out;
+    -ms-transition: all 150ms ease-out;
+    transition: all 150ms ease-out;
+}
+
+#play:hover, #prev:hover, #next:hover, #zoomin:hover, #fullscreen:hover
+{
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+}
+
+#play:active, #prev:active, #next:active, #zoomin:active, #fullscreen:active
+{
+    opacity: 0.5;
+}
+
+#deepzoom
+{
+    display: inline-block;
+    color: #1390ff;
+}

@@ -1,0 +1,1 @@
+var isPointerDragNormal = true;
